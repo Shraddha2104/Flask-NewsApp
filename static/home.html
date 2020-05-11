@@ -1,0 +1,1309 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Homework6</title>
+<script src="https://d3js.org/d3.v4.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Load d3-cloud -->
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+<script>
+		function showSlides() {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  for (i = 0; i < slides.length; i++) {
+			    slides[i].style.display = "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex > slides.length) {slideIndex = 1}    
+			  for (i = 0; i < dots.length; i++) {
+			    dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			 
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			  setTimeout(showSlides, 2000); // Change image every 2 seconds
+		}
+		function long_to_short(i){
+			var cross0=document.getElementById('cross0')
+			var cross1=document.getElementById('cross1')
+			var cross2=document.getElementById('cross2')
+			var cross3=document.getElementById('cross3')
+			var cross4=document.getElementById('cross4')
+			var cross5=document.getElementById('cross5')
+			var cross6=document.getElementById('cross6')
+			var cross7=document.getElementById('cross7')
+			var cross8=document.getElementById('cross8')
+			var cross9=document.getElementById('cross9')
+			var cross10=document.getElementById('cross10')
+			var cross11=document.getElementById('cross11')
+			var cross12=document.getElementById('cross12')
+			var cross13=document.getElementById('cross13')
+			var cross14=document.getElementById('cross14')
+			var cross15=document.getElementById('cross15')
+
+			var cross=[cross0,cross1,cross2,cross3,cross4,cross5,cross6,cross7,cross8,cross9,cross10,cross11,cross12,cross13,cross14,cross15]
+
+			var card0=document.getElementById('card0')
+			var card1=document.getElementById('card1')
+			var card2=document.getElementById('card2')
+			var card3=document.getElementById('card3')
+			var card4=document.getElementById('card4')
+			var card5=document.getElementById('card5')
+			var card6=document.getElementById('card6')
+			var card7=document.getElementById('card7')
+			var card8=document.getElementById('card8')
+			var card9=document.getElementById('card9')
+			var card10=document.getElementById('card10')
+			var card11=document.getElementById('card11')
+			var card12=document.getElementById('card12')
+			var card13=document.getElementById('card13')
+			var card14=document.getElementById('card14')
+
+
+			var card=[card0,card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14]
+
+			var long_desc0=document.getElementById('long_desc0')
+			var long_desc1=document.getElementById('long_desc1')
+			var long_desc2=document.getElementById('long_desc2')
+			var long_desc3=document.getElementById('long_desc3')
+			var long_desc4=document.getElementById('long_desc4')
+			var long_desc5=document.getElementById('long_desc5')
+			var long_desc6=document.getElementById('long_desc6')
+			var long_desc7=document.getElementById('long_desc7')
+			var long_desc8=document.getElementById('long_desc8')
+			var long_desc9=document.getElementById('long_desc9')
+			var long_desc10=document.getElementById('long_desc10')
+			var long_desc11=document.getElementById('long_desc11')
+			var long_desc12=document.getElementById('long_desc12')
+			var long_desc13=document.getElementById('long_desc13')
+			var long_desc14=document.getElementById('long_desc14')
+
+			var long_desc=[long_desc0,long_desc1,long_desc2,long_desc3,long_desc4,long_desc5,long_desc6,long_desc7,long_desc8,long_desc9,long_desc10,long_desc11,long_desc12,long_desc13,long_desc14]
+
+			var short_desc0=document.getElementById('short_desc0')
+			var short_desc1=document.getElementById('short_desc1')
+			var short_desc2=document.getElementById('short_desc2')
+			var short_desc3=document.getElementById('short_desc3')
+			var short_desc4=document.getElementById('short_desc4')
+			var short_desc5=document.getElementById('short_desc5')
+			var short_desc6=document.getElementById('short_desc6')
+			var short_desc7=document.getElementById('short_desc7')
+			var short_desc8=document.getElementById('short_desc8')
+			var short_desc9=document.getElementById('short_desc9')
+			var short_desc10=document.getElementById('short_desc10')
+			var short_desc11=document.getElementById('short_desc11')
+			var short_desc12=document.getElementById('short_desc12')
+			var short_desc13=document.getElementById('short_desc13')
+			var short_desc14=document.getElementById('short_desc14')
+
+			var short_desc=[short_desc0,short_desc1,short_desc2,short_desc3,short_desc4,short_desc5,short_desc6,short_desc7,short_desc8,short_desc9,short_desc10,short_desc11,short_desc12,short_desc13,short_desc14]
+			    
+			    long_desc[i].style.display = 'none'
+			    short_desc[i].style.display = 'block'
+			    cross[i].style.pointerEvents = 'none';
+			    cross[i].style.display = 'none';
+			    card[i].style.pointerEvents = 'auto';
+			    card[i].style.height = "170px";
+}
+function short_to_long(i){
+
+			var cross0=document.getElementById('cross0')
+			var cross1=document.getElementById('cross1')
+			var cross2=document.getElementById('cross2')
+			var cross3=document.getElementById('cross3')
+			var cross4=document.getElementById('cross4')
+			var cross5=document.getElementById('cross5')
+			var cross6=document.getElementById('cross6')
+			var cross7=document.getElementById('cross7')
+			var cross8=document.getElementById('cross8')
+			var cross9=document.getElementById('cross9')
+			var cross10=document.getElementById('cross10')
+			var cross11=document.getElementById('cross11')
+			var cross12=document.getElementById('cross12')
+			var cross13=document.getElementById('cross13')
+			var cross14=document.getElementById('cross14')
+			var cross15=document.getElementById('cross15')
+
+			var cross=[cross0,cross1,cross2,cross3,cross4,cross5,cross6,cross7,cross8,cross9,cross10,cross11,cross12,cross13,cross14,cross15]
+
+			var card0=document.getElementById('card0')
+			var card1=document.getElementById('card1')
+			var card2=document.getElementById('card2')
+			var card3=document.getElementById('card3')
+			var card4=document.getElementById('card4')
+			var card5=document.getElementById('card5')
+			var card6=document.getElementById('card6')
+			var card7=document.getElementById('card7')
+			var card8=document.getElementById('card8')
+			var card9=document.getElementById('card9')
+			var card10=document.getElementById('card10')
+			var card11=document.getElementById('card11')
+			var card12=document.getElementById('card12')
+			var card13=document.getElementById('card13')
+			var card14=document.getElementById('card14')
+
+
+			var card=[card0,card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14]
+
+			var long_desc0=document.getElementById('long_desc0')
+			var long_desc1=document.getElementById('long_desc1')
+			var long_desc2=document.getElementById('long_desc2')
+			var long_desc3=document.getElementById('long_desc3')
+			var long_desc4=document.getElementById('long_desc4')
+			var long_desc5=document.getElementById('long_desc5')
+			var long_desc6=document.getElementById('long_desc6')
+			var long_desc7=document.getElementById('long_desc7')
+			var long_desc8=document.getElementById('long_desc8')
+			var long_desc9=document.getElementById('long_desc9')
+			var long_desc10=document.getElementById('long_desc10')
+			var long_desc11=document.getElementById('long_desc11')
+			var long_desc12=document.getElementById('long_desc12')
+			var long_desc13=document.getElementById('long_desc13')
+			var long_desc14=document.getElementById('long_desc14')
+
+			var long_desc=[long_desc0,long_desc1,long_desc2,long_desc3,long_desc4,long_desc5,long_desc6,long_desc7,long_desc8,long_desc9,long_desc10,long_desc11,long_desc12,long_desc13,long_desc14]
+
+			var short_desc0=document.getElementById('short_desc0')
+			var short_desc1=document.getElementById('short_desc1')
+			var short_desc2=document.getElementById('short_desc2')
+			var short_desc3=document.getElementById('short_desc3')
+			var short_desc4=document.getElementById('short_desc4')
+			var short_desc5=document.getElementById('short_desc5')
+			var short_desc6=document.getElementById('short_desc6')
+			var short_desc7=document.getElementById('short_desc7')
+			var short_desc8=document.getElementById('short_desc8')
+			var short_desc9=document.getElementById('short_desc9')
+			var short_desc10=document.getElementById('short_desc10')
+			var short_desc11=document.getElementById('short_desc11')
+			var short_desc12=document.getElementById('short_desc12')
+			var short_desc13=document.getElementById('short_desc13')
+			var short_desc14=document.getElementById('short_desc14')
+
+			var short_desc=[short_desc0,short_desc1,short_desc2,short_desc3,short_desc4,short_desc5,short_desc6,short_desc7,short_desc8,short_desc9,short_desc10,short_desc11,short_desc12,short_desc13,short_desc14]
+			    
+
+		    long_desc[i].style.display = 'block';
+		    short_desc[i].style.display = 'none';
+		    cross[i].style.display = 'block';
+		    cross[i].style.pointerEvents = 'auto';
+		    card[i].style.pointerEvents = 'auto';
+		    card[i].style.height="260px";
+}
+		function sliding_news()
+		{
+			var req = new XMLHttpRequest()
+			req.onreadystatechange = function()
+			{
+				if (req.readyState == 4)
+				{
+					if (req.status != 200)
+					{
+						//error handling code here
+					}
+					else
+					{
+						try{
+							var response = JSON.parse(req.responseText)
+						}
+						catch(err)
+						{
+							alert(err.message);
+						}
+						var response = JSON.parse(req.responseText)
+						var html="";
+						// alert("innn");
+						global = document.createElement('div');
+						global.setAttribute("class", "slideshow-container");
+						var len=response.all_articles.length;
+						var articles_list=response.all_articles;
+						
+						for(var i=0;i<Math.min(response.all_articles.length,5);i++)
+						{
+							
+							local = document.createElement('div');
+							local.setAttribute("class", "mySlides fade");
+							picture = articles_list[i].urlToImage;
+							w = 300; h=200;
+							local.innerHTML="<a target='_blank' href="+articles_list[i].url+">" + "<img src='"+picture+"'width='"+w+"'height='"+h+"'>";
+							tt = document.createElement('div');
+							tt.setAttribute("class", "text");
+							// html+="<br>"+articles_list[i].title;
+							// html+="<br>"+articles_list[i].description;
+							tt.innerHTML="<br><b style='font-size:18px;'>"+articles_list[i].title+"</b><br>"+articles_list[i].description+"</a>";
+							local.appendChild(tt);
+							global.appendChild(local);
+						}
+									
+						}
+						document.body.appendChild(global);
+						odot=document.createElement('div');
+						for(var i=0;i<5;i++){
+							
+							dot=document.createElement('span');
+							dot.setAttribute("class", "dot");
+							odot.appendChild(dot);
+						}
+						document.body.appendChild(odot);
+						showSlides();
+					
+						}
+				
+			}
+		
+			req.open('POST', '/sliding_headlines')
+			req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+			
+			req.send();
+			return false
+	}
+
+
+	function loadXMLDoc()
+	{
+		var req = new XMLHttpRequest()
+		req.onreadystatechange = function()
+		{
+			if (req.readyState == 4 && 4>3)
+			{
+				if (req.status != 200)
+				{
+					//error handling code here
+					
+				}
+				else
+				{
+					var response = JSON.parse(req.responseText)
+					var html="";
+					console.log(response.status);
+
+					if(typeof(response)=='string'){
+					var response = JSON.parse(req.responseText)
+						alert(response.substring(77,280));
+						return false;
+
+					}
+					
+					
+					
+					var len=response.all_articles.length;
+					var articles_list=response.all_articles;
+				
+					html="";
+				    parent=document.getElementById('parent');
+				    //alert(len);
+				    var check=0;
+				    for(i=0;i<Math.min(response.all_articles.length,5);i++){
+				    	check=1;
+				    	picture = articles_list[i].urlToImage;
+				    	short_desc=articles_list[i].description;
+				    	short=short_desc.split(' ').slice(0,8).join(' ');
+				    	// console.log(short);
+				    	date=articles_list[i].publishedAt.substring(0,10);
+				    	yy=date.substring(0,4);
+				    	mm=date.substring(5,7);
+				    	dd=date.substring(8,10);
+				    	final_date=dd+' / '+mm+' / '+yy;
+				        html+='<div id="cross'+i+'" style="position: absolute;left:680px;cursor: pointer;font-size: 20px;color:rgb(110,12,145); " onclick="long_to_short('+i+')"> x</div>'
+				        +'<div id="card'+i+'" style="cursor: pointer; width:700px;font-family:serif; background-color:#F5F5F4;height:170px;border:1px solid #dcdcdc;  border-radius: 5px;" onclick="short_to_long('+i+')"><table><tr><td colspan="1" rowspan="2">'+
+				        '<img src='+articles_list[i].urlToImage+' style="width: 100px;height:80px;padding: 4px " ></td>'+
+				        '<td style="width: 561px " colspan="5 "><b id="mytitle">'+articles_list[i].title+'</b><br><p id="short_desc'+i+'">'+short+'...</p><p id="long_desc'+i+'">'+articles_list[i].description+'<br><b>Author: </b>'+articles_list[i].author+'<br><b>Source: </b>'+articles_list[i].source.name+'<br><b>Date: </b>'+final_date+'<br><a target="_blank" pointer-events: auto; text-decoration:"none" href="'+articles_list[i].url+ '">See Original Post</a></p >	</td><td style="vertical-align: top;align-items: top;text-align:top ;position: relative;right: 10px; padding-right: 10px; " rowspan="2 "></td><tr></table></div><br>';
+				    }
+
+
+
+
+			if(check==0){
+				parent.innerHTML="<pre class='tab8' style='font-size:20px;'>                    No Results</pre>";
+				return false;
+			}
+			else
+    			parent.innerHTML=html;
+
+    		if(len>5)
+			{
+					
+					
+					function more(){
+						html="";
+						// console.log("inside more")
+						
+					
+						for(i=5;i<Math.min(response.all_articles.length,15);i++){
+				    	
+					    	picture = articles_list[i].urlToImage;
+					    	short_desc=articles_list[i].description;
+					    	short=short_desc.split(' ').slice(0,8).join(' ');
+					    	// console.log(short);
+					    	date=articles_list[i].publishedAt.substring(0,10);
+					    	yy=date.substring(0,4);
+					    	mm=date.substring(5,7);
+					    	dd=date.substring(8,10);
+					    	final_date=dd+' / '+mm+' / '+yy;
+					        html+='<div id="cross'+i+'" style="position: absolute;left:680px;cursor: pointer;font-size: 20px;color:rgb(110,12,145); " onclick="long_to_short('+i+')"> x</div>'
+				        +'<div id="card'+i+'" style="cursor: pointer; width:700px;font-family:serif; background-color:#F5F5F4;height:170px;border:1px solid #dcdcdc;  border-radius: 5px;" onclick="short_to_long('+i+')"><table><tr><td colspan="1" rowspan="2">'+
+				        '<img src='+articles_list[i].urlToImage+' style="width: 100px;height:80px;padding: 4px " ></td>'+
+				        '<td style="width: 561px " colspan="5 "><b id="mytitle">'+articles_list[i].title+'</b><br><p id="short_desc'+i+'">'+short+'...</p><p id="long_desc'+i+'">'+articles_list[i].description+'<br><b>Author: </b>'+articles_list[i].author+'<br><b>Source: </b>'+articles_list[i].source.name+'<br><b>Date: </b>'+final_date+'<br><a target="_blank" pointer-events: auto; text-decoration:"none" href="'+articles_list[i].url+ '">See Original Post</a></p >	</td><td style="vertical-align: top;align-items: top;text-align:top ;position: relative;right: 10px; padding-right: 10px; " rowspan="2 "></td><tr></table></div><br>';
+
+
+				    }
+				     html +=  '<button id="less" class="button9">show less</button>';
+				    document.getElementById('extra').innerHTML = html;
+				    	var card5=document.getElementById('card5')
+						var card6=document.getElementById('card6')
+						var card7=document.getElementById('card7')
+						var card8=document.getElementById('card8')
+						var card9=document.getElementById('card9')
+						var card10=document.getElementById('card10')
+						var card11=document.getElementById('card11')
+						var card12=document.getElementById('card12')
+						var card13=document.getElementById('card13')
+						var card14=document.getElementById('card14')
+						var card=[card0,card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14]
+						var testarray = [1,2,3,4]
+
+						var cross5=document.getElementById('cross5')
+						var cross6=document.getElementById('cross6')
+						var cross7=document.getElementById('cross7')
+						var cross8=document.getElementById('cross8')
+						var cross9=document.getElementById('cross9')
+						var cross10=document.getElementById('cross10')
+						var cross11=document.getElementById('cross11')
+						var cross12=document.getElementById('cross12')
+						var cross13=document.getElementById('cross13')
+						var cross14=document.getElementById('cross14')
+						var cross=[cross0,cross1,cross2,cross3,cross4,cross5,cross6,cross7,cross8,cross9,cross10,cross11,cross12,cross13,cross14]
+
+						var long_desc5=document.getElementById('long_desc5')
+						var long_desc6=document.getElementById('long_desc6')
+						var long_desc7=document.getElementById('long_desc7')
+						var long_desc8=document.getElementById('long_desc8')
+						var long_desc9=document.getElementById('long_desc9')
+						var long_desc10=document.getElementById('long_desc10')
+						var long_desc11=document.getElementById('long_desc11')
+						var long_desc12=document.getElementById('long_desc12')
+						var long_desc13=document.getElementById('long_desc13')
+						var long_desc14=document.getElementById('long_desc14')
+						var long_desc=[long_desc0,long_desc1,long_desc2,long_desc3,long_desc4,long_desc5,long_desc6,long_desc7,long_desc8,long_desc9,long_desc10,long_desc11,long_desc12,long_desc13,long_desc14]
+
+						var short_desc5=document.getElementById('short_desc5')
+						var short_desc6=document.getElementById('short_desc6')
+						var short_desc7=document.getElementById('short_desc7')
+						var short_desc8=document.getElementById('short_desc8')
+						var short_desc9=document.getElementById('short_desc9')
+						var short_desc10=document.getElementById('short_desc10')
+						var short_desc11=document.getElementById('short_desc11')
+						var short_desc12=document.getElementById('short_desc12')
+						var short_desc13=document.getElementById('short_desc13')
+						var short_desc14=document.getElementById('short_desc14')
+						var short_desc=[short_desc0,short_desc1,short_desc2,short_desc3,short_desc4,short_desc5,short_desc6,short_desc7,short_desc8,short_desc9,short_desc10,short_desc11,short_desc12,short_desc13,short_desc14]
+
+				    for(i=5;i<Math.min(response.all_articles.length,15);i++){
+							    long_desc[i].style.display = 'none'
+							    cross[i].style.pointerEvents = 'none';
+							    cross[i].style.display = 'none';
+						}
+
+				    // console.log("outside more");
+				   
+				    document.getElementById('less').addEventListener('click',lesss);
+
+					}//end of more()
+						
+				    
+					 // console.log(html);
+				    document.getElementById('extra').innerHTML='<button id="showMore" class="button9">show more</button>';
+				    document.getElementById('showMore').addEventListener('click',more);
+				    
+				    function lesss()
+				    {
+				    	document.getElementById('extra').innerHTML="";
+				    	document.getElementById('extra').innerHTML='<button id="showMore" class="button9">show more</button>';
+				    	document.getElementById('showMore').addEventListener('click',more);
+
+				    }
+
+
+			}	   
+
+			var cross0=document.getElementById('cross0')
+			var cross1=document.getElementById('cross1')
+			var cross2=document.getElementById('cross2')
+			var cross3=document.getElementById('cross3')
+			var cross4=document.getElementById('cross4')
+			
+
+			var cross=[cross0,cross1,cross2,cross3,cross4]
+
+			var card0=document.getElementById('card0')
+			var card1=document.getElementById('card1')
+			var card2=document.getElementById('card2')
+			var card3=document.getElementById('card3')
+			var card4=document.getElementById('card4')
+			
+
+
+			var card=[card0,card1,card2,card3,card4]
+
+			var long_desc0=document.getElementById('long_desc0')
+			var long_desc1=document.getElementById('long_desc1')
+			var long_desc2=document.getElementById('long_desc2')
+			var long_desc3=document.getElementById('long_desc3')
+			var long_desc4=document.getElementById('long_desc4')
+			
+
+			var long_desc=[long_desc0,long_desc1,long_desc2,long_desc3,long_desc4]
+
+			var short_desc0=document.getElementById('short_desc0')
+			var short_desc1=document.getElementById('short_desc1')
+			var short_desc2=document.getElementById('short_desc2')
+			var short_desc3=document.getElementById('short_desc3')
+			var short_desc4=document.getElementById('short_desc4')
+			
+
+			var short_desc=[short_desc0,short_desc1,short_desc2,short_desc3,short_desc4]
+			    
+
+				//setting default properties
+			    for(i=0;i<Math.min(response.all_articles.length,5);i++){
+				    long_desc[i].style.display = 'none'
+				    cross[i].style.pointerEvents = 'none';
+				    cross[i].style.display = 'none';
+				}
+					
+
+					
+					
+
+				}
+			}
+		}
+		
+	
+		req.open('POST', '/ajax')
+		req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+		var un = document.getElementById('keyword').value;
+		if(un==''){
+			alert("Keyword Missing");
+			return false;
+		}
+		var start_date = document.getElementById('start_date').value;
+		var end_date = document.getElementById('end_date').value;
+		var category = document.getElementById('category');
+		if ((Date.parse(start_date) > Date.parse(end_date))) {
+        	alert("Incorrect time");
+        	document.getElementById("end_date").value = "";
+        	return false;
+    	}
+        var selected_category=category.options[category.selectedIndex].value; 
+        var source = document.getElementById('source');
+        var source_list=[]
+        for(var i=0;i<source.options.length;i++){
+        	source_list.push(source.options[i].value);
+        }
+        
+        var selected_source=source.options[source.selectedIndex].value ;
+        // alert(selected_source);
+		var postVars = 'keyword='+un+"&start_date="+start_date+"&end_date="+end_date+"&category="+selected_category+"&source="+selected_source+"&source_list="+source_list;
+		req.send(postVars);
+		return false
+	}
+	function resetForm(){
+
+
+		document.getElementById("parent").innerHTML="";
+		document.getElementById("extra").innerHTML="";
+		document.getElementById("keyword").value='';
+		document.getElementById("category").value='all';
+		document.getElementById("source").value='all';
+
+		Date.prototype.subtractDays = function(d) {  
+                this.setTime(this.getTime() - (d*24*60*60*1000));  
+                return this;  
+            } 
+
+	document.getElementById('start_date').valueAsDate = new Date().subtractDays(7);
+	document.getElementById('end_date').valueAsDate = new Date();
+	}
+	
+	var slideIndex = 0;
+
+	function loadHeadlines()
+	{
+		var req = new XMLHttpRequest()
+		// alert("headd");
+		req.onreadystatechange = function()
+		{
+			if (req.readyState == 4)
+			{
+				if (req.status != 200)
+				{
+					//error handling code here
+				}
+				else
+				{
+					try{
+					var response = JSON.parse(req.responseText)}
+					catch(err)
+					{
+						alert(err.message);
+					}
+					var html="";
+					
+					var cnn_articles=response.headlines["cnn_news"];
+					// console.log(cnn_articles);
+					var cnn_len=cnn_articles.length;
+					
+					var fox_articles=response.headlines["fox_news"];
+					var fox_len=fox_articles.length;
+					
+					global = document.createElement('div');
+					global.setAttribute("id", "cent");
+					
+					
+					h1 = document.createElement("p");
+					h1.setAttribute("id", "rule2");
+					h1.innerHTML="<h1><center>CNN<hr></center></h1>";
+					global.appendChild(h1);
+
+					for(var i=0;i<Math.min(cnn_len,4);i++){
+						html="";
+
+						picture = cnn_articles[i].urlToImage;
+						// w = 200; h=150;
+						g = document.createElement('div');
+						g.setAttribute("id", "card");
+						// global.appendChild(g);
+						// g.innerHTML="<img src='"+picture+"'width=100%'"+"'height=100%'"+"'>";
+						html+="<a style='text-decoration:none;color:black;' href="+cnn_articles[i].url+" target='_blank'><div id='she'>" + "<img src='"+picture+"'width=100%'"+"'height=110px'"+"'>"+'<div class="container">'+"<p><b>" +cnn_articles[i].title+"</b></p><p>"+cnn_articles[i].description+"</p></div></a>"
+						g.innerHTML=html;
+						
+
+						global.appendChild(g);
+				}
+				g = document.createElement("br");
+				global.appendChild(g);
+				
+
+				h2 = document.createElement("p");
+				h2.setAttribute("id", "rule1");
+				h2.innerHTML="<h1 ><center>Fox News</center><hr ></h1>";
+				global.appendChild(h2);
+				for(var i=0;i<Math.min(fox_len,4);i++){
+						html="";
+
+						picture = fox_articles[i].urlToImage;
+						// w = 200; h=150;
+						g = document.createElement('div');
+						g.setAttribute("id", "card");
+						// global.appendChild(g);
+						// g.innerHTML="<img src='"+picture+"'width=100%'"+"'height=100%'"+"'>";
+						html+="<a style='text-decoration:none;color:black;' href="+fox_articles[i].url+" target='_blank'><div id='she'>" + "<img src='"+picture+"'width=100%'"+"'height=110px'"+"'>"+'<div class="container">'+"<p><b>" +fox_articles[i].title+"</b></p><p>"+fox_articles[i].description+"</p></div></a>"
+						g.innerHTML=html;
+						
+
+						global.appendChild(g);
+				}
+				document.body.appendChild(global);
+				
+
+				}
+			}
+		}
+	
+		req.open('POST', '/loadHeadlines')
+		req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+
+		req.send();
+		return false
+	}
+	function getWordCloud()
+	{
+		var req = new XMLHttpRequest()
+			req.onreadystatechange = function()
+			{
+				if (req.readyState == 4)
+				{
+					if (req.status != 200)
+					{
+						//error handling code here
+					}
+					else
+					{
+						try{
+							var response = JSON.parse(req.responseText)
+						}
+						catch(err)
+						{
+							alert(err.message);
+						}
+						var response = JSON.parse(req.responseText)
+						// alert(response.all_articles);
+						// console.log(response.all_articles);
+						var html="";
+						// alert("innn");
+						
+
+// List of words
+						var myWords = response.all_articles
+
+						// set the dimensions and margins of the graph
+						var margin = {top: 0, right: 0, bottom: 0, left: 0},
+						    width = 360,
+						    height = 250;
+
+						// append the svg object to the body of the page
+						var svg = d3.select("#my_dataviz").append("svg")
+						    .attr("width", 320)
+						    .attr("height", 250)
+						  .append("g")
+						    .attr("transform",
+						          "translate(" + margin.left + "," + margin.top + ")");
+
+						// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+						// Wordcloud features that are different from one word to the other must be here
+
+
+						var layout = d3.layout.cloud()
+						  .size([width, height])
+						  .words(myWords.map(function(d) { return {text: d.word, size:d.size}; }))
+						  .padding(3)        //space between words
+						  .rotate(function() { return ~~(Math.random() * 2) * 90; })
+						  .fontSize(function(d) { return d.size; })      // font size of words
+						  .on("end", draw);
+						layout.start();
+						
+						function draw(words) {
+							  svg
+							    .append("g")
+							      .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+							      .selectAll("text")
+							        .data(words)
+							      .enter().append("text")
+							        .style("font-size", function(d){return d.size-1;})
+							        .style("fill", "#10100F")
+							        .attr("text-anchor", "middle")
+							        .style("font-family", "Impact")
+							        .attr("font-family","Impact")
+							        .attr("transform", function(d) {
+							          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+							        })
+							        .text(function(d) { return d.text; });
+							}
+						// document.getElementById('cloud').innerHTML = html;
+
+						}
+				}
+			}
+		
+			req.open('GET', '/word_cloud')
+			req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+			
+			req.send();
+			return false
+	}
+	function getHome()
+	{
+		document.getElementById('form-control').style.display = 'none';
+		document.getElementById('rule1').style.display = 'none';
+		document.getElementById('rule2').style.display = 'none';
+		document.getElementById('my_dataviz').style.display = 'block';
+		sliding_news();
+	    loadHeadlines();
+	    // getWordCloud();
+
+	}
+	function Openform()
+	{
+
+	    document.getElementById('form-control').style.display = '';
+	    document.getElementById('my_dataviz').style.display = 'none';
+	    // document.getElementById('card').style.display = 'none';
+	    var elems=document.querySelectorAll('[id=card]');
+	    for(var i=0;i<elems.length;i++)
+	    {
+	    	elems[i].style.display='none';
+	    }
+	    document.getElementById('rule1').style.display = 'none';
+	    document.getElementById('rule2').style.display = 'none';
+
+	    var elems=document.getElementsByClassName("slideshow-container");
+	    // alert(elems.length)
+	    for(var i=0;i<elems.length;i++)
+	    {
+	    	elems[i].style.display='none';
+	    }
+	    
+
+	}
+	function fill_default_sources()
+	{
+		var req = new XMLHttpRequest()
+			req.onreadystatechange = function()
+			{
+				if (req.readyState == 4)
+				{
+					if (req.status != 200)
+					{
+						//error handling code here
+					}
+					else
+					{
+						try{
+							var response = JSON.parse(req.responseText)
+						}
+						catch(err)
+						{
+							alert(err.message);
+						}
+						var response = JSON.parse(req.responseText)
+						var html="";
+						 html='<option value="all">all</option>';
+					
+						var source_list=response.sources.sources;
+
+						
+						for(var i=0;i<Math.min(10,response.sources.sources.length);i++)
+						{
+							html+="<option value="+source_list[i].name+">"+source_list[i].name+"</option>";
+						}
+						
+						document.getElementById('source').innerHTML = html;
+						
+						
+						
+									
+					}
+						
+					
+				}
+				
+			}
+		
+			req.open('POST', '/get_default_sources')
+			req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+			
+			req.send();
+			return false
+	}
+	function get_sources(selectObject)
+	{
+		var value = selectObject.value;
+		// alert(value);  
+		html="";
+		var req = new XMLHttpRequest()
+		// alert("headd");
+		req.onreadystatechange = function()
+		{
+			if (req.readyState == 4)
+			{
+				if (req.status != 200)
+				{
+					//error handling code here
+				}
+				else
+				{
+					try{
+						var response = JSON.parse(req.responseText)
+					}
+					catch(err)
+					{
+						alert(err.message);
+					}
+					var html='<option value="all">all</option>';
+					
+					var source_list=response.sources.sources;
+
+					// alert(response.sources.sources.length);
+					
+					for(var i=0;i<Math.min(10,response.sources.sources.length);i++)
+					{
+						html+="<option value="+source_list[i].id+">"+source_list[i].name+"</option>";
+					}
+					// console.log(html);
+					
+					document.getElementById('source').innerHTML = html;
+
+
+				}
+			}
+		}
+	
+		req.open('POST', '/get_sources')
+		req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+		var postVars = 'category='+value;
+		// alert(postVars);
+		req.send(postVars);
+		return false
+
+  		
+	}
+// showSlides();
+
+
+	window.onload = function() {
+		Date.prototype.subtractDays = function(d) {  
+                this.setTime(this.getTime() - (d*24*60*60*1000));  
+                return this;  
+            } 
+
+	document.getElementById('start_date').valueAsDate = new Date().subtractDays(7);
+	document.getElementById('end_date').valueAsDate = new Date();
+	sliding_news();
+    loadHeadlines();
+    getWordCloud();
+	fill_default_sources();
+	
+
+    
+}
+	
+
+</script>
+<style>
+	#myDiv {
+  border: 1px solid green ;
+}
+#form-control{
+	height:170px;
+	width:700px; 
+	margin: auto;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	padding-top: 30px;
+	background:#F5F5F4;
+	text-align: center;
+	float: right;
+	margin-right:270px;
+	margin-left: 20px;
+	position: absolute;
+	top:50px;
+	left:400px;
+}
+#cent{
+	margin:auto;
+	text-align: center;
+	position: absolute;
+	top:330px;
+	left:300px;
+}
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#767473;
+	font-family:Arial;
+	width:200px;
+	height: 50px;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	/*background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);*/
+	background-color:green;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+	background-color: green;
+}
+#card {
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
+  transition: 0.3s;
+  width: 200px;
+  border-width: 1px;*/
+  border:1px solid rgb(225,225,225);
+  /*display: flex;*/
+  height: 360px;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+  display: inline-block;
+  margin:6px;
+  overflow: hidden;
+  font-size: 12px;
+  
+}
+
+#card0:hover,#card1:hover,#card2:hover,#card3:hover,#card4:hover,#card5:hover,#card6:hover,#card7:hover,#card8:hover,#card9:hover,#card10:hover,#card11:hover,#card12:hover,#card13:hover,#card14:hover,#card15:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#card img {
+  border-radius: 5px 5px;
+}
+
+.container {
+  padding: 2px 16px;
+}
+#cent{
+	margin-left: auto;
+  margin-right: auto;
+}  
+.button,.button3 {
+  background-color: #F5F5F4;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  border: 0.5px solid black;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /*margin: 4px 2px;*/
+  border-radius:6px;
+  cursor: pointer;
+  width:200px;
+	height: 50px;
+}
+.button:active,.button3:active {
+  background-color: #767473;
+  color:white;
+}
+.button:focus,.button3:focus {
+  background-color: #767473;
+}
+.button:hover,.button3:hover{
+	  background-color: #45B00F;
+	  color:white;
+}
+.button9 {
+  background-color: #F5F5F4;
+  border: none;
+  color: black;
+  /*padding: 15px 32px;*/
+  text-align: center;
+  border: 0.5px solid black;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  left:300px;
+  font-size: 12px;
+  height: 30px;
+  /*margin: 4px 2px;*/
+  margin: 0 auto;
+  /*border-radius:6px;*/
+  cursor: pointer;
+  width:100px;
+}
+.button9:focus {
+  background-color: #767473;
+}
+.button9:hover{
+	background-color: #45B00F;
+	 color:white;
+}
+.button1 {
+  background-color: #E7E7E5;
+  border: none;
+  color: black;
+  /*padding: 15px 32px;*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  /*border-radius:6px;*/
+  cursor: pointer;
+  width:50px;
+	height: 25px;
+}
+input {
+  outline-color: #F99B3E	;
+}
+.button1:active {
+  background-color: #939592;
+  color:#191B18;
+}
+.button1:hover{
+	  background-color: #45B00F;
+	  color:white;
+}
+.tab8 { 
+           tab-size: 16; 
+           }
+#search{
+	/*margin-top: 10px;*/
+	display: inline-block;
+	/*margin-left: 200px;*/
+	position: absolute;
+	height:100%;
+	top:70px;
+	left:30px;
+}
+input[type="text"] {
+    width: 150px;
+    height: 20px;
+}
+input[type="select"] {
+    width: 150px;
+    height: 25px;
+}
+hr{
+	width: 864px;
+	/*height: 1px;
+	background: black;*/
+	border-top: 1px dotted black;
+}	
+input[type="date"] {
+    width: 150px;
+    height: 20px;
+}		
+* {box-sizing: border-box;}
+body {font-family: Georgia;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 440px;
+  height: 250px;
+  position: relative;
+  margin: auto;
+  display: inline-block;
+  position: absolute;
+  top: 70px;
+  left: 300px;
+}
+.slideshow-container img{
+	width: 440px;
+	height: 250px;
+}
+
+/* Caption text */
+.text {
+  color: #FFFFFF;
+  font-size: 12px;
+  /*padding: 8px 12px;*/
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: #292929;
+  opacity: 0.8;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+* {
+  box-sizing: border-box;
+}
+
+
+.btn-group button{
+  position:sticky;/* Make the buttons appear below each other */
+
+}
+/* Float four columns side by side */
+.column {
+  
+  width: 100%;
+  padding: 0 10px;
+  margin:auto;
+  float: left;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+	margin: 0 -5px;
+	width:700px;
+	margin:auto;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+.btn-group button {
+  background-color: #F5F5F4; /* Green background */
+  border: 1px solid black; /* Green border */
+  color: black; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 200px; /* Set a width if needed */
+  display: block; 
+  border-radius:4px;
+  cursor: pointer;
+  font-size:15px;
+
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+.btn-group button:hover {
+  background-color: #3e8e41;
+  color:white;
+}
+.btn-group button:focus {
+  background-color: #767473;
+}
+
+.btn-group button:active {
+  background-color: #767473;
+  color:white;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.imageclass {
+	 float:left;
+	 /*width:200px;
+	 height:20px;*/
+	 /*display: flex;*/
+	 height: 100%;
+	 margin-bottom: auto;
+
+}
+
+
+.btn-group{
+	position: absolute;
+	top:0px;
+	left:5px;
+}
+#my_dataviz{
+	position: absolute;
+  	top: 70px;
+    left: 760px;
+    background-color: #F0ECEC;
+}
+/* Style the counter cards */
+.parent{
+            margin-left:auto;
+            margin-right:auto;
+            height:auto; 
+            width:auto;
+        }
+.card {
+            /*position: absolute;
+            top: 80px;*/
+            /*left: 200px;*/
+            width: 650px;*/
+            height: auto;
+            
+            background-color: rgb(239, 239, 239);
+            box-shadow: 0px 0px 0px grey;
+            -webkit-transition: box-shadow .1s ease-out;
+            border-color: rgb(215, 215, 215);
+            border-style: groove;
+            border-width: 1px;
+}
+        
+        .card:hover {
+            box-shadow: 1px 8px 15px grey;
+            -webkit-transition: box-shadow .1s ease-in;
+        }
+	</style>
+</head>
+<body>
+	
+	<div id="main" style="margin:0 auto">
+
+	<div id="my_dataviz" style="background-color:#E8E4E3;width: 370px;height: 250px; "></div>
+	<div id="search">
+<!-- 	<button class="button3" style="position: absolute; top: 70px; left:7px;background-color: #767473;" onclick="window.location.reload();" style="position: absolute; left:7px;top: 130px;">Google News</button><br>
+	<button class="button" onclick="Openform(); ">Search</button><br> -->
+	<!-- <button type="submit" form="form1" class="myButton" value="Search" onclick = "Openform();">Search</button> -->
+	<div class="btn-group">
+		  <button onclick="window.location.reload();">Google News</button>
+		  <button onclick="Openform(); ">Search</button>
+		 
+</div>
+	</div>
+	
+	<div id="form-control" style = "display:none">
+
+<form>
+
+
+  <label for="keyword">Keyword   <sup style="color:red;">*</sup></label>
+  <input type="text"  style="height: 20px; width: 150px ;border: none; border:solid 1px #ccc;
+      border-radius: 3px; margin-right: 10px" id="keyword" required>
+
+  <label for="start_date">  From   <sup style="color:red;">*</sup></label>
+  <input type="date"  required style="height: 20px; width: 150px;width: 150px ;border: none; border:solid 1px #ccc;
+      border-radius: 3px;" id="start_date">
+
+  <label for="end_date" style=" margin-left: 10px">To   <sup style="color:red;">*</sup></label>
+  <input type="date"  required style="height: 20px; width: 150px;width: 150px ;border: none; border:solid 1px #ccc;
+      border-radius: 3px;" id="end_date"><br><br>
+
+  <label for="category">Category</label>
+  <select id="category" style="height: 20px; width: 150px; " onchange="get_sources(this)">
+    <option value="all" selected>all</option>
+    <option value="business">business</option>
+    <option value="entertainment">entertainment</option>
+    <option value="general">general</option>
+    <option value="health">health</option>
+    <option value="science">science</option>
+    <option value="sports">sports</option>
+    <option value="technology">technology</option>
+  </select>
+
+  <label for="source">Source</label>
+  <select id="source" style="height: 20px; width: 150px">
+    
+    </select>
+    <br><br>
+   <input type="submit" class="button1" value="Search" onclick="return loadXMLDoc();" >
+   <button style="display: none;" type="submit" >Hidden button</button>
+   <input type="button" class="button1" onclick=resetForm(); value="Clear">
+</form>
+<br><br><br>
+</div>
+<div style="position: absolute;top: 270px;left: 421px">
+<div id="no-results"style="background-color: white;margin:0 auto;">
+<div id="parent" style="background-color: white;margin:0 auto;
+            "></div>
+<div id="extra" style="background-color: white;margin:0 auto;
+            "></div>
+<div id="slide"></div>
+</div>
+</div>
+</body>
+</html>
