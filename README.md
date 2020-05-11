@@ -32,7 +32,7 @@ The home page has a carousel that shows the latest news from all sources. This n
 The home page also displays the top 5 news articles from Fox News and CNN which are fetched using Google News API. 
 The button on the left is used to toggle between the home page and the search page. 
 
-## Screenshots
+### Screenshots
 <h2>Home Page News</h2>
 <img src="61.png"  />
 
