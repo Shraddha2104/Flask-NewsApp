@@ -42,4 +42,7 @@ The button on the left is used to toggle between the home page and the search pa
 <h2>Search Results</h2>
 <img src="63.png"  />
 
-
+ ### Run code
+ - Clone this github repository
+ - Start the virtual environment using `source venv/bin/activate`
+ - Run `python app.py` to start the server
